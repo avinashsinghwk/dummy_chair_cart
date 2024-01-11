@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+:root{
+    --bg-red: rgb(255, 0, 0, 0.7);
+    --bg-white: rgb(122 122 122);
+    --bg-black: rgb(63 62 62);
+    --bg-skyblue:#0f4f6a;
+    --bg-blue: #565690;
+}
+.bg-color-red{
+    background-color: var(--bg-red);
+}
+.bg-color-blue{
+    background-color: var(--bg-blue);
+}
+.bg-color-black{
+    background-color: var(--bg-black);
+}
+.bg-color-skyblue{
+    background-color: var(--bg-skyblue);
+}
+.bg-color-white{
+    background-color: var(--bg-white);
+}
+body{
+    width: 100vw;
+    /* overflow-x: hidden; */
+    height: 100vh;
+}
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    height: 80%;
+    width: 70%;
+    display: flex;
+    column-gap: 3rem;
+}
+
+.right{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.right-wrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 90%;
+}
+.sub-heading, .heading{
+    color: white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.sub-heading{
+    margin-bottom: -0.8rem;
+}
+.heading{
+    font-size: 1.6rem;
+}
+.price{
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+}
+.real, .fake{
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.fake{
+    font-size: 1.2rem;
+    text-decoration: line-through;
+}
+input[type="radio"]{
+    display: none;
+}
+.toggle-radio{
+    display: flex;
+    column-gap: 1rem;
+}
+label[for="description-radio"], label[for="details-radio"]{
+    cursor: pointer;
+    color: white;
+    font-size: 1.1rem;
+    transition: scale 0.5s;
+    font-weight: bold;
+    opacity: 0.8;
+}
+input[name="toggle-radio"]:checked + label{
+    transform: scale(1.1);
+    opacity: 1;
+    text-shadow: 0 0 5px black;
+}
+.description{
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+}
+.details{
+    display: flex;
+    column-gap: 2rem;
+    color: white;
+}
+.display_block{
+    display: none;
+}
+#details span{
+    font-size: 2rem;
+    margin-right: 2px;
+}
+.length, .width, .height, .weight{
+    font-weight: bold;
+}
+.choose-color-text{
+    color: white;
+    font-size: 1.05rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.color-radio{
+    display: flex;
+    column-gap: 1rem;
+}
+.color-radio>label{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 4px;
+    filter: drop-shadow(0 0 3px black);
+    cursor: pointer;
+}
+label[for="red"]{
+    background-color: var(--bg-red);
+}
+label[for="white"]{
+    background-color: var(--bg-white);
+}
+label[for="blue"]{
+    background-color: var(--bg-blue);
+}
+label[for="black"]{
+    background-color: var(--bg-black);
+}
+label[for="skyblue"]{
+    background-color: var(--bg-skyblue);
+}
+input[name="color-radio"]:checked + label{
+    border: 1px solid black;
+    transform: scale(1.2);
+}
+#add-cart{
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: WHITE;
+    font-weight: bold;
+    margin-top: 2rem;
+    filter: drop-shadow(0 0 5px black);
+    position: relative;
+}
+#add-cart::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: green;
+    z-index: -1;
+    width: 0;
+    height: 100%;
+    transition: width 0.5s ease;
+}
+#add-cart:hover::after{
+    width: 100%;
+}
+#add-cart > img{
+    width: 1.3rem;
+    height: 1.3rem;
+}
+button{
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.left{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left > img{
+    width: 320px;
+    height: 90%;
+    /* transform: rotateZ(none); */
+}
+.animation_chair{
+    animation: chair 0.2s ease 2;
+}
+@keyframes chair {
+    0%{
+        transform: rotateZ(none);
+    }
+    25%{
+        transform: rotateZ(5deg);
+    }
+    75%{
+        transform: rotateZ(-5deg);
+    }
+    25%{
+        transform: rotateZ(none);
+    }
+}
